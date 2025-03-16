@@ -171,7 +171,7 @@ ggradar <- function(plot.data,
     x = NA,
     y = NA
   )
-  print(axis$label)
+  # print(axis$label)
   # axis label coordinates
   n.vars <- length(var.names)
   angles <- seq(from = 0, to = 2 * pi, by = (2 * pi) / n.vars)
@@ -340,7 +340,7 @@ ggradar <- function(plot.data,
   }
 
   if (!is.null(group.colours)) {
-    colour_values <- rep(group.colours, length(unique(plot.data[, 1])) / length(group.colours))
+    colour_values <- group.colours
   } else {
     colour_values <- generate_color_values(length(unique(plot.data[, 1])))
   }
