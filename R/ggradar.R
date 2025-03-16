@@ -142,8 +142,9 @@ ggradar <- function(plot.data,
     stop("plot.data' contains value(s) < centre.y", call. = FALSE)
   }
 
+  
   print(plot.data)
-  print((plot.data[, -1])
+  print(plot.data[, -1])
   print(max(plot.data[, -1]))
   print(grid.max)
   if (max(plot.data[, -1]) > grid.max) {
