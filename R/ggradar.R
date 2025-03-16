@@ -141,7 +141,11 @@ ggradar <- function(plot.data,
   if (min(plot.data[, -1]) < centre.y) {
     stop("plot.data' contains value(s) < centre.y", call. = FALSE)
   }
-  
+
+  print(plot.data)
+  print((plot.data[, -1])
+  print(max(plot.data[, -1]))
+  print(grid.max)
   if (max(plot.data[, -1]) > grid.max) {
     plot.data[, -1] <- (plot.data[, -1]/max(plot.data[, -1]))*grid.max
     warning("'plot.data' contains value(s) > grid.max, data scaled to grid.max", call. = FALSE)
