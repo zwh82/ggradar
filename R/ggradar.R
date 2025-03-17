@@ -237,6 +237,7 @@ ggradar <- function(plot.data,
   # identify plot extent when plotting first (base) layer]
 
   # base layer = axis labels for axes to left of central y-axis [x< -(x.centre.range)]
+  print(axis)
   base <- ggplot(axis$label) +
     xlab(NULL) +
     ylab(NULL) +
