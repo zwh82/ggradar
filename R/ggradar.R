@@ -117,11 +117,13 @@ ggradar <- function(plot.data,
   # if there are several groups in the first column with differing values
   # on the dimensions, we should aggregate them by taking the mean, otherwise
   # only the first row is taken into account in the function CalculateGroupPath.
+  plot.data_ori <- plot.data
   plot.data <- aggregate(
     x = plot.data[, -1], 
     by = list(plot.data[, 1]), 
     FUN = "mean")
-    
+  plot.data <- plot.data[order(match(plot.data[[1]], plot.data_ori[[1]])), ]
+  
   if (!is.factor(plot.data[, 1])) {
     plot.data[, 1] <- as.factor(as.character(plot.data[, 1]))
   }
@@ -142,11 +144,7 @@ ggradar <- function(plot.data,
     stop("plot.data' contains value(s) < centre.y", call. = FALSE)
   }
 
-  
-  print(plot.data)
-  print(plot.data[, -1])
-  print(max(plot.data[, -1]))
-  print(grid.max)
+
   if (max(plot.data[, -1]) > grid.max) {
     plot.data[, -1] <- (plot.data[, -1]/max(plot.data[, -1]))*grid.max
     warning("'plot.data' contains value(s) > grid.max, data scaled to grid.max", call. = FALSE)
