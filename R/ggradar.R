@@ -162,7 +162,7 @@ ggradar <- function(plot.data,
   group <- NULL
   group$path <- CalculateGroupPath(plot.data.offset)
 
-  # print(group$path)
+  print(group$path)
   # (c) Calculate coordinates required to plot radial variable axes
   axis <- NULL
   axis$path <- CalculateAxisPath(var.names, grid.min + abs(centre.y), grid.max + abs(centre.y))
