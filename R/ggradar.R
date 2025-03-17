@@ -122,7 +122,7 @@ ggradar <- function(plot.data,
     x = plot.data[, -1], 
     by = list(plot.data[, 1]), 
     FUN = "mean")
-  plot.data <- plot.data[order(match(plot.data[[1]], plot.data_ori[[1]])), ]
+  # plot.data <- plot.data[order(match(plot.data[[1]], plot.data_ori[[1]])), ]
   
   if (!is.factor(plot.data[, 1])) {
     plot.data[, 1] <- as.factor(as.character(plot.data[, 1]))
