@@ -162,7 +162,7 @@ ggradar <- function(plot.data,
   group <- NULL
   group$path <- CalculateGroupPath(plot.data.offset)
 
-  print(group$path)
+  # print(group$path)
   # (c) Calculate coordinates required to plot radial variable axes
   axis <- NULL
   axis$path <- CalculateAxisPath(var.names, grid.min + abs(centre.y), grid.max + abs(centre.y))
@@ -237,7 +237,7 @@ ggradar <- function(plot.data,
   # identify plot extent when plotting first (base) layer]
 
   # base layer = axis labels for axes to left of central y-axis [x< -(x.centre.range)]
-  print(axis)
+  # print(axis)
   base <- ggplot(axis$label) +
     xlab(NULL) +
     ylab(NULL) +
